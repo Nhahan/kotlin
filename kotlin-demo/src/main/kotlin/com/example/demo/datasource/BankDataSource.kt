@@ -13,4 +13,8 @@ interface BankDataSource {
     fun addBank(bank: Bank): Bank {
         return bank
     }
+
+    fun updateBank(bank: Bank): Bank {
+        return bank
+    }
 }

@@ -23,4 +23,9 @@ class BankController(private val service: BankService) {
     fun addBank(@RequestBody bank: Bank): Bank {
         return service.addBank(bank)
     }
+
+    @PatchMapping("/api/banks")
+    fun updateBank(@RequestBody bank: Bank): Bank {
+        return service.updateBank(bank)
+    }
 }

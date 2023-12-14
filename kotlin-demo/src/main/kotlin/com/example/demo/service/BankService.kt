@@ -17,4 +17,8 @@ class BankService(private val bankDataSource: BankDataSource) {
     fun addBank(bank: Bank): Bank {
         return bankDataSource.addBank(bank)
     }
+
+    fun updateBank(bank: Bank): Bank {
+        return bankDataSource.updateBank(bank)
+    }
 }
