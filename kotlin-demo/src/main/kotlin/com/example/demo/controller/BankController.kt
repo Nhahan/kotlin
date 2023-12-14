@@ -2,9 +2,8 @@ package com.example.demo.controller
 
 import com.example.demo.model.Bank
 import com.example.demo.service.BankService
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.http.HttpStatus
+import org.springframework.web.bind.annotation.*
 
 @RestController
 class BankController(private val service: BankService) {
@@ -17,5 +16,11 @@ class BankController(private val service: BankService) {
     @GetMapping("/api/banks/{accountNumber}")
     fun getBank(@PathVariable accountNumber: String): Bank {
         return service.getBank(accountNumber)
+    }
+
+    @PostMapping("/api/banks")
+    @ResponseStatus(HttpStatus.CREATED)
+    fun addBank(@RequestBody bank: Bank): Bank {
+        return service.addBank(bank)
     }
 }
