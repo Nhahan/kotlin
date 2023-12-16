@@ -49,6 +49,7 @@ tasks.withType<Test> {
     useJUnitPlatform()
 }
 
+// plain jar task is disabled
 tasks.named<Jar>("jar") {
     enabled = false
 }
