@@ -23,4 +23,9 @@ class PostService(
         post.update(postUpdateRequestDto)
         return postId
     }
+
+    @Transactional
+    fun deletePost(postId: Long) {
+        postRepository.deleteById(postId)
+    }
 }

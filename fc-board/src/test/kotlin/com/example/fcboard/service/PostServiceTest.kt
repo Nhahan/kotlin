@@ -68,4 +68,20 @@ class PostServiceTest(
             }
         }
     }
+    given("delete post") {
+        When("delete post") {
+            val postId = postService.createPost(
+                PostCreateRequestDto(
+                    title = "title",
+                    content = "content",
+                    createdBy = "createdBy"
+                )
+            )
+            postService.deletePost(postId!!)
+            then("delete post") {
+                val post = postRepository.findByIdOrNull(postId)
+                post shouldBe null
+            }
+        }
+    }
 })
