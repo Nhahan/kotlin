@@ -1,8 +1,8 @@
 package com.example.fcboard.controller
 
-import com.example.fcboard.controller.dto.PostCreateRequest
-import com.example.fcboard.controller.dto.PostDetailResponse
-import com.example.fcboard.controller.dto.PostUpdateRequest
+import com.example.fcboard.controller.dto.*
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.Pageable
 import org.springframework.web.bind.annotation.*
 
 @RestController
@@ -30,25 +30,11 @@ class PostController {
     }
 
     @GetMapping("/posts")
-    fun getPosts(): List<PostDetailResponse> {
-        return listOf(
-            PostDetailResponse(
-                id = 1L,
-                title = "제목",
-                content = "내용",
-                createdBy = "작성자",
-                createdAt = "작성일",
-                updatedAt = "수정일"
-            ),
-            PostDetailResponse(
-                id = 2L,
-                title = "제목",
-                content = "내용",
-                createdBy = "작성자",
-                createdAt = "작성일",
-                updatedAt = "수정일"
-            )
-        )
+    fun getPosts(
+        pageable: Pageable,
+        @ModelAttribute postSearchRequest: PostSearchRequest
+    ): Page<PostSummaryResponse> {
+        return Page.empty()
     }
 
     @PutMapping("/posts/{postId}")
