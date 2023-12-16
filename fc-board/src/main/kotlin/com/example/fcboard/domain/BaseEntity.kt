@@ -1,5 +1,8 @@
 package com.example.fcboard.domain
 
+import jakarta.persistence.GeneratedValue
+import jakarta.persistence.GenerationType
+import jakarta.persistence.Id
 import jakarta.persistence.MappedSuperclass
 import java.time.LocalDateTime
 
@@ -7,15 +10,14 @@ import java.time.LocalDateTime
 abstract class BaseEntity(
     createdBy: String
 ) {
-    val createdBy: String = createdBy
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    val id: Long = 0
+    var createdBy: String = createdBy
+        protected set
     val createdAt: LocalDateTime = LocalDateTime.now()
     var updatedBy: String? = null
         protected set
     var updatedAt: LocalDateTime? = null
         protected set
-
-    fun update(updatedBy: String) {
-        this.updatedBy = updatedBy
-        this.updatedAt = LocalDateTime.now()
-    }
 }

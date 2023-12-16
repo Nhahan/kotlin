@@ -1,9 +1,8 @@
 package com.example.fcboard.domain
 
+import com.example.fcboard.service.dto.PostUpdateRequestDto
 import jakarta.persistence.Entity
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.GenerationType
-import jakarta.persistence.Id
+import java.time.LocalDateTime
 
 @Entity
 class Post(
@@ -11,11 +10,14 @@ class Post(
     content: String,
     createdBy: String
 ): BaseEntity(createdBy) {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long = 0
-
     var title: String = title
         private set
     var content: String = content
         private set
+
+    fun update(postUpdateRequestDto: PostUpdateRequestDto) {
+        title = postUpdateRequestDto.title
+        content = postUpdateRequestDto.content
+        updatedAt = LocalDateTime.now()
+    }
 }
