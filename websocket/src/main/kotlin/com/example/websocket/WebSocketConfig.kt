@@ -10,7 +10,7 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
 @EnableWebSocketMessageBroker
 class WebSocketConfig: WebSocketMessageBrokerConfigurer {
     companion object {
-        private const val ENDPOINT = "/hello-websocket-chatting"
+        private const val ENDPOINT = "/chatting"
         private const val SIMPLE_BROKER = "/topic"
         private const val PUBLISH = "/app"
     }
