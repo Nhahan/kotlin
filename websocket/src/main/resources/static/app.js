@@ -3,7 +3,7 @@
  * @type {StompJs.Client}
  */
 const stompClient = new StompJs.Client({
-    brokerURL: 'ws://localhost:8080/hello-websocket-chatting',
+    brokerURL: 'ws://localhost:8080/chatting',
     reconnectDelay: 200,
 });
 
@@ -49,7 +49,7 @@ function disconnect() {
 function sendMessage() {
     console.log("> Send message : " + $("#chatting-message").val());
     stompClient.publish({
-        destination: "/app/chatting-message",
+        destination: "/app/message",
         body: JSON.stringify({'message': $("#chatting-message").val()})
     });
 }
