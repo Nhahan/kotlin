@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class DeliveryApiApplication
 
 fun main(args: Array<String>) {
-    runApplication<DeliveryApiApplication>(*args)
+	runApplication<DeliveryApiApplication>(*args)
 }
