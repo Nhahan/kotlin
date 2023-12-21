@@ -30,7 +30,7 @@ dependencies {
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
 
-    implementation("at.favre.lib:bcrypt:0.12.0")
+    implementation("at.favre.lib:bcrypt:0.9.0")
 
     implementation("io.r2dbc:r2dbc-h2")
 
