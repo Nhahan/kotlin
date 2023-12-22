@@ -8,7 +8,7 @@ import java.util.*
 
 object JWTUtils {
 
-    fun createToken(claim: JWTClaim, properties: JWTProperties) =
+    fun createToken(claim: JWTClaim, properties: JWTProperties): String =
         JWT.create()
             .withIssuer(properties.issuer)
             .withSubject(properties.subject)
