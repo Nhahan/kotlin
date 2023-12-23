@@ -1,11 +1,11 @@
-package com.auth
+package com.mvc.example
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class ReactiveAuthApplication
+class ExampleApplication
 
 fun main(args: Array<String>) {
-    runApplication<ReactiveAuthApplication>(*args)
+    runApplication<ExampleApplication>(*args)
 }
