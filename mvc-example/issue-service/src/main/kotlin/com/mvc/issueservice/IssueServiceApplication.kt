@@ -1,11 +1,11 @@
-package com.mvc.example
+package com.mvc.issueservice
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class ExampleApplication
+class IssueServiceApplication
 
 fun main(args: Array<String>) {
-    runApplication<ExampleApplication>(*args)
+	runApplication<IssueServiceApplication>(*args)
 }

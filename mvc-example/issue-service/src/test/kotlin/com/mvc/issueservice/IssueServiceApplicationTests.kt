@@ -1,10 +1,10 @@
-package com.mvc.example
+package com.mvc.issueservice
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
-class ExampleApplicationTests {
+class IssueServiceApplicationTests {
 
 	@Test
 	fun contextLoads() {
