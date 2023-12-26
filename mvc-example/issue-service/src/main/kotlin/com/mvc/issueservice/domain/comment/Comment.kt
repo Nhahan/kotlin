@@ -1,5 +1,7 @@
-package com.mvc.issueservice.domain
+package com.mvc.issueservice.domain.comment
 
+import com.mvc.issueservice.domain.BaseEntity
+import com.mvc.issueservice.domain.issue.Issue
 import jakarta.persistence.Entity
 import jakarta.persistence.FetchType
 import jakarta.persistence.GeneratedValue

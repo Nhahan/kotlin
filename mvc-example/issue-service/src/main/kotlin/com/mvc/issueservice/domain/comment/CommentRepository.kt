@@ -1,4 +1,4 @@
-package com.mvc.issueservice.domain
+package com.mvc.issueservice.domain.comment
 
 import org.springframework.data.jpa.repository.JpaRepository
 

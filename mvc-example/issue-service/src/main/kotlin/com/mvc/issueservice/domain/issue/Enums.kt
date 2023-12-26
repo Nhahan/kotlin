@@ -1,4 +1,4 @@
-package com.mvc.issueservice.domain
+package com.mvc.issueservice.domain.issue
 
 enum class IssueType {
     BUG, TASK;

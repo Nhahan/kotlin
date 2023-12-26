@@ -1,5 +1,6 @@
-package com.mvc.issueservice.domain
+package com.mvc.issueservice.domain.issue
 
+import com.mvc.issueservice.domain.BaseEntity
 import jakarta.persistence.Entity
 import jakarta.persistence.EnumType
 import jakarta.persistence.Enumerated
