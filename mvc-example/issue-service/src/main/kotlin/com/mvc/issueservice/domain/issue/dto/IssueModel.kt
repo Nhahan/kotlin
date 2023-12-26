@@ -1,7 +1,9 @@
 package com.mvc.issueservice.domain.issue.dto
 
 import com.fasterxml.jackson.annotation.JsonFormat
+import com.mvc.issueservice.domain.comment.Comment
 import com.mvc.issueservice.domain.comment.dto.CommentResponse
+import com.mvc.issueservice.domain.comment.dto.toResponse
 import com.mvc.issueservice.domain.issue.Issue
 import com.mvc.issueservice.domain.issue.IssuePriority
 import com.mvc.issueservice.domain.issue.IssueStatus
@@ -37,7 +39,7 @@ data class IssueResponse(
             with(issue) {
                 IssueResponse(
                     id = id!!,
-                    comments = mutableListOf(),
+                    comments = comments.sortedByDescending(Comment::id).map(Comment::toResponse),
                     summary = summary,
                     description = description,
                     userId = userId,
